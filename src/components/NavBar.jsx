@@ -37,7 +37,7 @@ const NavBar = () => {
             <img
               src={isDarkMode ? LogoWhite : Logoblue}
               alt="Lazerjet-tech Logo"
-              className="w-auto h-[120px]"
+              className="w-auto h-[100px]"
             />
           </Link>
           <div className="hidden lg:flex items-center space-x-4 font-inria">
