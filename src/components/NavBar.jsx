@@ -8,21 +8,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import Logoblue from "../assets/logo/1.png";
 import LogoWhite from "../assets/logo/2.png";
 import SearchBar from "../components/SearchBar.";
+import { useTheme } from "../components/ThemeContext";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   const isActive = (path) => {
     return location.pathname === path;
-  };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
   };
 
   return (
@@ -119,9 +115,6 @@ const NavBar = () => {
               </li>
             ))}
           </ul>
-          {/* <div className="mt-4">
-            <SearchBar setSearchTerm={setSearchTerm} />
-          </div> */}
         </div>
       </div>
     </nav>

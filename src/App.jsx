@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "../src/components/ThemeContext";
-import { useTheme } from "../src/components/ThemeContext";
+import { ThemeProvider, useTheme } from "../src/components/ThemeContext";
 import NavBar from "../src/components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import Loader from "../src/components/Loader"; // Assuming you have a Loader component
+import Loader from "../src/components/Loader";
 
 const AppContent = () => {
   const { isDarkMode } = useTheme();
@@ -35,16 +34,15 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading phase or perform actual data fetching here
     const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds (example)
+      setLoading(false);
     }, 2000);
 
-    return () => clearTimeout(timer); // Clean up the timer on component unmount
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <Loader />; // Show loader while loading is true
+    return <Loader />;
   }
 
   return (

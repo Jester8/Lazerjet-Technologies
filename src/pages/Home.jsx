@@ -1,85 +1,71 @@
 import React, { useState, useEffect } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import NavBar from "../components/NavBar";
-import img1 from "../assets/img/pic.jpg"; // Ensure this path is correct
+import img1 from "../assets/img/pic.jpg";
 import Loader from "../components/Loader.jsx";
-import Atc from "../assets/img/ATC_Africa_logo_(Purple).png";
+import Atc from "../assets/img/ATC.svg";
 import LFC from "../assets/img/Lfc.png";
 import Depigbo from "../assets/img/depgibo.jpg";
+import Black from "../assets/img/darklogo (1).jpg";
+import Kensy from "../assets/img/kensycare.png";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a data loading delay
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 2 seconds loading delay
-
-    return () => clearTimeout(timer); // Cleanup timer
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
+
+  const brands = [
+    { src: Atc, alt: "ATC" },
+    { src: Depigbo, alt: "Depigbo" },
+    { src: Kensy, alt: "Kensy" },
+    { src: LFC, alt: "LFC" },
+    { src: Black, alt: "Blacksuise" },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* NavBar */}
       <NavBar />
-
-      {/* Main Content Section */}
       <div className="flex-grow flex flex-col items-center text-center relative">
-        <img
-          src={img1}
-          alt=""
-          className="w-auto h-auto max-w-full max-h-full object-contain"
-        />
-
-        {/* Brands Section with Text */}
-        <div className="w-full bg-blue-100 py-4 overflow-hidden mt-2">
-          {" "}
-          {/* Reduced space between image and text */}
-          <div className="flex animate-scroll">
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 1
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 2
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 3
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 4
-            </div>
-            {/* Repeat the texts to make it loop seamlessly */}
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 1
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 2
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 3
-            </div>
-            <div className="h-16 mx-4 flex items-center text-xl font-bold text-blue-600">
-              Brand 4
-            </div>
+        <img src={img1} alt="" className="w-full h-auto object-cover" />
+        <div className="w-full bg-blue-100 py-4 mt-0 overflow-hidden">
+          <div className="scrolling-wrapper flex animate-scroll items-center">
+            {[...brands, ...brands, ...brands].map((brand, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 mx-2 w-24 sm:w-28 md:w-32 lg:w-36"
+              >
+                <img
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Add the scroll animation */}
-      <style jsx="true">{`
+      <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(100%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-33.33%);
           }
         }
-
-        .animate-scroll {
+        .scrolling-wrapper {
           display: flex;
-          animation: scroll 15s linear infinite;
+          overflow-x: hidden;
+          white-space: nowrap;
+          width: 300%;
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
         }
       `}</style>
     </div>
