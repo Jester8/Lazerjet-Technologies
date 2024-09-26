@@ -14,7 +14,7 @@ const AppContent = () => {
   return (
     <div
       className={`min-h-screen ${
-        isDarkMode ? "bg-dark text-dark" : "bg-light text-light"
+        isDarkMode ? "bg-dark-900 text-dark" : "bg-light text-light"
       } transition-colors duration-300`}
     >
       <NavBar />

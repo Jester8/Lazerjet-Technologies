@@ -1,11 +1,15 @@
 import React from "react";
 
-const Skeleton = () => {
+const Skeleton = ({ height, width, isDarkMode, rounded = "rounded" }) => {
   return (
-    <div className="animate-pulse">
-      <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
-      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-    </div>
+    <div
+      className={`animate-pulse ${rounded}`}
+      style={{
+        height: height || "20px",
+        width: width || "100%",
+        backgroundColor: isDarkMode ? "#2d2d2d" : "#e5e7eb", // Adjusting for dark mode and light mode
+      }}
+    ></div>
   );
 };
 
