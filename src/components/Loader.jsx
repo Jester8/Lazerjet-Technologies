@@ -3,8 +3,7 @@ import LogoWhite from "../assets/logo/2.png"; // Make sure the path to the logo 
 
 const Loader = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-      {/* Logo */}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
       <div className="relative overflow-hidden h-20 mb-6">
         <img
           src={LogoWhite}
@@ -14,10 +13,8 @@ const Loader = () => {
         />
       </div>
 
-      {/* Spinning Loader */}
       <div className="loader border-t-transparent border-white"></div>
 
-      {/* Add styles for the animation */}
       <style jsx="true">{`
         @keyframes slideDown {
           0% {

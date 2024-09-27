@@ -15,10 +15,52 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+/* Animation classes */
 .animate-slideDown {
   animation: slideDown 0.5s ease forwards;
 }
 
 .delay-200 {
   animation-delay: 0.2s;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 1s ease-in-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 1s ease-in-out;
+}
+
+/* Dark mode transitions */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

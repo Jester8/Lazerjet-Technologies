@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../components/ThemeContext";
 import {
   Code,
   Database,
@@ -12,7 +13,48 @@ import {
   Server,
   Globe,
   Keyboard,
-} from "lucide-react"; // New icons added
+  Smartphone,
+  Tablet,
+  Cpu,
+  HardDrive,
+  Printer,
+  Mouse,
+  Headphones,
+  Camera,
+  Mic,
+  Speaker,
+  Tv,
+  Radio,
+  Bluetooth,
+  Cast,
+  Rss,
+  Share2,
+  Link,
+  Paperclip,
+  File,
+  Folder,
+  Upload,
+  Download,
+  Send,
+  Inbox,
+  Mail,
+  MessageSquare,
+  Phone,
+  Video,
+  Image,
+  Music,
+  Film,
+  Play,
+  Pause,
+  FastForward,
+  Rewind,
+  SkipBack,
+  SkipForward,
+  Volume2,
+  Layers,
+  Bell,
+  Calendar,
+} from "lucide-react";
 
 const iconComponents = [
   Code,
@@ -27,16 +69,57 @@ const iconComponents = [
   Server,
   Globe,
   Keyboard,
+  Smartphone,
+  Tablet,
+  Cpu,
+  HardDrive,
+  Printer,
+  Mouse,
+  Headphones,
+  Camera,
+  Mic,
+  Speaker,
+  Tv,
+  Radio,
+  Bluetooth,
+  Cast,
+  Rss,
+  Share2,
+  Link,
+  Paperclip,
+  File,
+  Folder,
+  Upload,
+  Download,
+  Send,
+  Inbox,
+  Mail,
+  MessageSquare,
+  Phone,
+  Video,
+  Image,
+  Music,
+  Film,
+  Play,
+  Pause,
+  FastForward,
+  Rewind,
+  SkipBack,
+  SkipForward,
+  Volume2,
+  Layers,
+  Bell,
+  Calendar,
 ];
 
 // Function to generate random positions without overlap
 const generateUniquePositions = (count) => {
   const positions = [];
-  const safeDistance = 15;
+  const safeDistance = 10; // Reduced safe distance to fit more icons
 
   while (positions.length < count) {
-    const top = Math.random() * 80;
-    const left = Math.random() * 80;
+    const top = Math.random() * 90 + 5; // Ensure icons are not too close to the edges
+    const left = Math.random() * 90 + 5;
     let isSafe = true;
 
     for (let pos of positions) {
@@ -57,21 +140,24 @@ const generateUniquePositions = (count) => {
   return positions;
 };
 
-const FloatingIcon = ({ Icon, top, left, delay }) => (
+const FloatingIcon = ({ Icon, top, left, delay, isDarkMode }) => (
   <div
-    className="absolute text-gray-300 opacity-20 animate-float"
+    className={`absolute ${
+      isDarkMode ? "text-white" : "text-gray-900"
+    } opacity-20 animate-float`}
     style={{
       top: `${top}%`,
       left: `${left}%`,
       animationDelay: `${delay}s`,
-      animationDuration: "2s",
+      animationDuration: "3s",
     }}
   >
-    <Icon size={34} /> {/* Icon size */}
+    <Icon size={24} /> {/* Reduced icon size */}
   </div>
 );
 
 const FloatingIcons = () => {
+  const { isDarkMode } = useTheme();
   const positions = generateUniquePositions(iconComponents.length);
 
   return (
@@ -80,9 +166,10 @@ const FloatingIcons = () => {
         <FloatingIcon
           key={index}
           Icon={Icon}
-          top={positions[index].top} // Use unique non-overlapping positions
+          top={positions[index].top}
           left={positions[index].left}
-          delay={Math.random() * 1} // Faster delays
+          delay={Math.random() * 2}
+          isDarkMode={isDarkMode}
         />
       ))}
     </>

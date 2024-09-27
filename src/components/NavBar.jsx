@@ -16,14 +16,11 @@ const NavBar = () => {
   const { isDarkMode, toggleDarkMode } = useTheme();
 
   const isActive = (path) => location.pathname === path;
-
   return (
     <nav
       className={`${
-        isDarkMode
-          ? "bg-gray-900 text-white" // Pure black background and white text for dark mode
-          : "bg-light text-gray-900" // Light background with black text
-      } shadow-sm fixed top-0 left-0 right-0 z-10 transition-colors duration-300`}
+        isDarkMode ? "bg-gray-900 text-white" : "bg-light text-gray-900"
+      } shadow-sm fixed top-0 left-0 right-0 z-50 transition-colors duration-300`}
     >
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
@@ -93,9 +90,9 @@ const NavBar = () => {
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
-                <CloseIcon className="h-6 w-6 text-white transition-transform duration-300 rotate-90" />
+                <CloseIcon className="h-6 w-6 text-black transition-transform duration-300 rotate-90" />
               ) : (
-                <MenuIcon className="h-6 w-6 text-white transition-transform duration-300" />
+                <MenuIcon className="h-6 w-6 text-black transition-transform duration-300" />
               )}
             </button>
           </div>
@@ -124,7 +121,7 @@ const NavBar = () => {
                   } transition-all duration-300 ${
                     isActive(link.path)
                       ? isDarkMode
-                        ? "text-white font-bold relative"
+                        ? "text-black font-bold relative"
                         : "text-black font-bold relative"
                       : ""
                   }`}
