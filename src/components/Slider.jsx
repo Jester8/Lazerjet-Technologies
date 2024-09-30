@@ -1,14 +1,14 @@
 import React from "react";
-// Ensure the images are correctly imported
 import atc from "../assets/img/ATC.svg";
 import depigbo from "../assets/img/depgibo.jpg";
 import kensy from "../assets/img/kensycare.png";
 import lfc from "../assets/img/Lfc.png";
 import darklogo from "../assets/img/darklogo (1).jpg";
+import { useTheme } from "../components/ThemeContext";
 
 const Slider = () => {
+  const { isDarkMode } = useTheme();
   const images = [atc, depigbo, kensy, lfc, darklogo];
-
   const duplicatedImages = [
     ...images,
     ...images,
@@ -18,21 +18,26 @@ const Slider = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-9 px-8">
-      {" "}
-      <h2 className="text-center text-2xl font-semibold font-bebas mt-4">
+    <div className={`py-9 px-8 ${isDarkMode ? "bg-gray-900" : "bg-white"}`}>
+      <h2
+        className={`text-center text-2xl font-semibold font-bebas mt-4 ${
+          isDarkMode ? "text-white" : "text-black"
+        }`}
+      >
         Meet Our Previous Clients
       </h2>
-      <div className="overflow-hidden relative flex justify-center items-center w-auto h-40 bg-none mx-auto">
-        {" "}
-        <div className="flex space-x-5 animate-slide">
+      <div className="overflow-hidden relative w-full h-40 bg-none mx-auto mt-4">
+        <div className="flex space-x-5 animate-slide-left-to-right absolute left-0 top-0">
           {duplicatedImages.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-3 flex justify-center items-center"
+              className="flex-shrink-0 flex justify-center items-center"
             >
-              <button className="bg-white rounded-full shadow-md overflow-hidden w-24 h-24">
-                {" "}
+              <button
+                className={`rounded-full shadow-md overflow-hidden w-24 h-24 ${
+                  isDarkMode ? "bg-gray-700" : "bg-white"
+                }`}
+              >
                 <img
                   src={image}
                   alt={`Image ${index + 1}`}

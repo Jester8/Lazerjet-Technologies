@@ -86,13 +86,23 @@ const NavBar = () => {
 
             {/* Mobile Menu Toggle Button */}
             <button
-              className="lg:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300"
+              className={`lg:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300 ${
+                isDarkMode ? "text-white" : "text-black"
+              }`}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
-                <CloseIcon className="h-6 w-6 text-black transition-transform duration-300 rotate-90" />
+                <CloseIcon
+                  className={`h-6 w-6 transition-transform duration-300 rotate-90 ${
+                    isDarkMode ? "text-white" : "text-black"
+                  }`}
+                />
               ) : (
-                <MenuIcon className="h-6 w-6 text-black transition-transform duration-300" />
+                <MenuIcon
+                  className={`h-6 w-6 transition-transform duration-300 ${
+                    isDarkMode ? "text-white" : "text-black"
+                  }`}
+                />
               )}
             </button>
           </div>

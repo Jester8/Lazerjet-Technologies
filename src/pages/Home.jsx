@@ -10,7 +10,7 @@ import Button from "../components/button";
 import { FaWhatsapp } from "react-icons/fa";
 import pic from "../assets/img/pic.jpg";
 import Slider from "../components/Slider";
-
+import Footer from "../components/Footer";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { isDarkMode } = useTheme();
@@ -109,8 +109,15 @@ const Home = () => {
         />
 
         <CardSection />
+        <hr
+          className={`my-8 border-t ${
+            isDarkMode ? "border-gray-700" : "border-gray-300"
+          }`}
+        />
         <Slider />
       </div>
+
+      <Footer />
 
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -172,5 +179,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

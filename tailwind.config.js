@@ -12,10 +12,13 @@ export default {
         bebas: ['Bebas Neue', 'cursive'],
       },
       keyframes: {
-        
+        slideLeftToRight: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation: {
-        slide: 'slide 35s linear infinite',
+        'slide-left-to-right': 'slideLeftToRight 20s linear infinite',
       },
       backgroundColor: {
         light: '#f3f4f6', // Light mode background
