@@ -9,13 +9,18 @@ import LogoWhite from "../assets/logo/2.png";
 import SearchBar from "../components/SearchBar.";
 import { useTheme } from "../components/ThemeContext";
 
-const NavBar = () => {
+const NavBar = ({ onSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const location = useLocation();
   const { isDarkMode, toggleDarkMode } = useTheme();
 
   const isActive = (path) => location.pathname === path;
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    onSearch(term);
+  };
   return (
     <nav
       className={`${
@@ -111,7 +116,7 @@ const NavBar = () => {
         {/* Mobile Menu */}
         <div
           className={`${
-            isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 "
           } lg:hidden overflow-hidden transition-all duration-300 ease-in-out`}
         >
           <ul className="flex flex-col items-center space-y-4 py-4">
@@ -131,7 +136,7 @@ const NavBar = () => {
                   } transition-all duration-300 ${
                     isActive(link.path)
                       ? isDarkMode
-                        ? "text-black font-bold relative"
+                        ? "text-white font-bold relative"
                         : "text-black font-bold relative"
                       : ""
                   }`}
@@ -139,7 +144,7 @@ const NavBar = () => {
                 >
                   {link.name}
                   {isActive(link.path) && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white animate-slide-in"></span> // White underline in dark mode
+                    <span className="absolute bottom-0 left-[150px] w-20 text-center h-0.5 bg-white animate-slide-in"></span> // White underline in dark mode
                   )}
                 </Link>
               </li>
