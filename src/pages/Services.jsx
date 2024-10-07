@@ -1,7 +1,9 @@
 import React from "react";
 import { useTheme } from "../components/ThemeContext";
 import img from "../assets/img/background.png";
-
+import cardSection from "../components/CardSection";
+import CardSection from "../components/CardSection";
+import Footer from "../components/Footer";
 const Services = () => {
   const { isDarkMode } = useTheme();
   return (
@@ -25,6 +27,10 @@ const Services = () => {
             </h1>
           </div>
         </div>
+        <div className="mt-9">
+          <CardSection />
+        </div>
+        <Footer />
       </div>
     </div>
   );

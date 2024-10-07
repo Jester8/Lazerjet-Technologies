@@ -1,11 +1,13 @@
 import React from "react";
-import { useTheme } from "../components/ThemeContext";
 import img from "../assets/img/background.png";
+import ContactForm from "./../components/ContactForm";
+import Footer from "../components/Footer";
+import { useTheme } from "../components/ThemeContext";
 
 const Contact = () => {
   const { isDarkMode } = useTheme();
   return (
-    <div>
+    <div className={isDarkMode ? "dark" : ""}>
       <div className="content-wrapper pt-12">
         <div
           className={`flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-6 md:py-12 bg-cover bg-center ${
@@ -26,6 +28,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ContactForm />
+      <Footer />
     </div>
   );
 };

@@ -4,7 +4,8 @@ import img from "../assets/img/background.png";
 import Aboutdetails from "../components/Aboutdetails";
 import FloatingIcon from "../components/FloatingIcons";
 import Animate from "../assets/vid/Animation.gif";
-
+import AboutCard from "../components/AboutCard";
+import Footer from "../components/Footer";
 
 const About = () => {
   const { isDarkMode } = useTheme();
@@ -33,6 +34,9 @@ const About = () => {
       </div>
 
       <Aboutdetails />
+      <AboutCard />
+
+      <Footer />
     </div>
   );
 };
