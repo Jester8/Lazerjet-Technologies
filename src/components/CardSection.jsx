@@ -11,25 +11,25 @@ const eventsData = [
   {
     title: "Web Development",
     description:
-      "Join us for an event centered around user experience and design, focusing on usability, user research, and creating captivating digital interfaces.",
+      "We build responsive and dynamic websites that showcase your brand and drive results. Our custom web solutions ensure that your site looks great, works flawlessly, and grows with your business.",
     image: web,
   },
   {
     title: "App Development",
     description:
-      "Celebrate the power of open-source technologies at our community-driven meetup. Engage in discussions about open-source contributions and collaboration.",
+      "We create user-friendly mobile apps tailored to your business needs. From concept to launch, our apps are designed to enhance customer engagement and deliver seamless experiences across all devices.",
     image: app,
   },
   {
     title: "Search Engine Optimization",
     description:
-      "Attend our cybersecurity meetup and gain insights into the latest threats, defensive strategies, and ethical hacking techniques.",
+      "Boost your online visibility and reach more customers with our expert SEO services. We optimize your website to rank higher on search engines, driving organic traffic and increasing your chances of being found online",
     image: seo,
   },
   {
     title: "Web Hosting",
     description:
-      "Join our data-focused meetup to explore the latest trends and practices in data science, machine learning, and analytics and AI applications.",
+      "Reliable and secure web hosting services to keep your website online 24/7. With fast loading speeds and robust support, we ensure your site performs at its best, no matter the traffic.",
     image: host,
   },
 ];

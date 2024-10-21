@@ -75,11 +75,12 @@ const Home = () => {
                 isDarkMode ? "text-gray-300" : "text-white"
               } text-md sm:text-xl md:text-md lg:text-md font-inria max-w-3xl animate-slide-in-slower mb-6`}
             >
-              We develop scalable websites for businesses across Africa and
-              beyond. We develop scalable websites for businesses across Africa
-              and beyond. We develop scalable websites for businesses across
-              Africa and beyond. We develop scalable websites for businesses
-              across Africa and beyond.
+              Our expertise lies in designing and developing innovative,
+              scalable websites that not only meet the needs of businesses
+              across Africa but also extend their digital presence far beyond.
+              we build platforms that are tailored to your goals, optimized for
+              growth, and ready to engage audiences globally. We empower
+              businesses to thrive in today’s fast-paced digital landscape
             </p>
 
             <Button

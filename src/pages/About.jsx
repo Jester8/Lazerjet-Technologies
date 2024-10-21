@@ -6,12 +6,26 @@ import FloatingIcon from "../components/FloatingIcons";
 import Animate from "../assets/vid/Animation.gif";
 import AboutCard from "../components/AboutCard";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const { isDarkMode } = useTheme();
 
   return (
     <div>
+      <Helmet>
+        <title> About | Lazerjet-Technologies</title>
+        <meta
+          name="description"
+          content="Welcome to the homepage of Lazerjet-technologies."
+        />
+        <meta property="og:title" content="Home | My SEO Optimized Website" />
+        <meta
+          property="og:description"
+          content="Explore our website with fast loading and great content."
+        />
+        <meta property="og:image" content={img} />
+      </Helmet>
       <div className="content-wrapper pt-12">
         <div
           className={`flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-6 md:py-12 bg-cover bg-center ${
@@ -21,7 +35,7 @@ const About = () => {
         >
           <div className="absolute inset-0 bg-black opacity-60 md:opacity-70"></div>
 
-          <div className="md:w-1/2 text-left md:pr-8 relative z-10 text-center ml-0 lg:ml-[560px] md:ml-0">
+          <div className="md:w-1/2  md:pr-8 relative z-10 text-center ml-0 lg:ml-[560px] md:ml-0">
             <h1
               className={`${
                 isDarkMode ? "text-gray-100" : "text-white"
