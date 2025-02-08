@@ -1,4 +1,3 @@
-import React from "react";
 import Logoblue from "../assets/logo/1.png";
 import LogoWhite from "../assets/logo/2.png";
 import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import NavBar from "../components/NavBar";
 import img1 from "../assets/img/background.png";
@@ -12,7 +12,7 @@ import pic from "../assets/img/pic.jpg";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [setIsLoading] = useState(true);
   const { isDarkMode } = useTheme();
   const [showPopup, setShowPopup] = useState(false);
 
@@ -53,7 +53,7 @@ const Home = () => {
 
       <NavBar />
 
-      <div className="content-wrapper pt-12">
+      <div className="content-wrapper pt-2">
         <div
           className={`flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-6 md:py-12 bg-cover bg-center ${
             isDarkMode ? "bg-opacity-50" : ""
@@ -148,7 +148,7 @@ const Home = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         @keyframes slideInSlow {
           from {
             transform: translateX(-100%);

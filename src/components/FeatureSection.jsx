@@ -50,7 +50,7 @@ const FeatureSection = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-bebas">
                   {heading}
                 </h1>
-                <p className="text-lg sm:text-xl mb-4 font-inria">{mainText}</p>
+                <p className="text-md sm:text-lg mb-4 font-inria">{mainText}</p>
                 <p className="text-md sm:text-lg font-inria">{featuresText}</p>
               </>
             )}
@@ -105,7 +105,7 @@ const FeatureSection = () => {
               </>
             ) : (
               <>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-bebas">
+                <h2 className="text-4xl sm:text-4xl font-bold mb-4 font-bebas">
                   {newSectionHeading}
                 </h2>
                 <p className="text-lg sm:text-xl font-inria">
