@@ -53,7 +53,7 @@ const Home = () => {
 
       <NavBar />
 
-      <div className="content-wrapper pt-4">
+      <div className="content-wrapper pt-9">
         <div
           className={`flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-6 md:py-12 bg-cover bg-center ${
             isDarkMode ? "bg-opacity-50" : ""

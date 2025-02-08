@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../components/ThemeContext";
 import FloatingIcons from "./FloatingIcons";
 import F1 from "../assets/img/ai.jpeg";
@@ -11,9 +11,7 @@ const FeatureSection = () => {
 
   const heading = "What We Do";
   const mainText =
-    "We deliver innovative solutions for your business needs. From concept to creation, we aim to solve problems with efficiency and creativity.";
-  const featuresText =
-    "Our approach revolves around bringing the best of technology to meet real-world needs. From innovative AI systems to IoT integration, we ensure that your business remains competitive in a rapidly changing landscape.";
+    "We deliver innovative solutions for your business needs. From concept to creation, we aim to solve problems with efficiency and creativity. We also help bring your ideas to life by by employing the use of the best languages and technologies to deliver just as expected.";
 
   const newSectionHeading = "Our Approach";
   const newSectionText =
@@ -22,7 +20,7 @@ const FeatureSection = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); // Set the loading time to 5 seconds
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -37,8 +35,10 @@ const FeatureSection = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center p-4 sm:p-8">
+        {/* First Section */}
         <div className="flex flex-col lg:flex-row items-center justify-center w-full mb-12">
-          <div className="w-full lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left mb-6 lg:mb-0 lg:pr-6">
+          {/* Text content for first section */}
+          <div className="w-full lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left lg:pr-6">
             {isLoading ? (
               <>
                 <Skeleton variant="text" width="80%" height={50} />
@@ -46,18 +46,28 @@ const FeatureSection = () => {
                 <Skeleton variant="text" width="90%" height={30} />
               </>
             ) : (
-              <>
-                <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-bebas">
+              <div className="flex flex-col">
+                <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-bebas order-1">
                   {heading}
                 </h1>
-                <p className="text-md sm:text-lg mb-4 font-inria">{mainText}</p>
-                <p className="text-md sm:text-lg font-inria">{featuresText}</p>
-              </>
+                <div className="order-3 lg:order-2">
+                  <p className="text-md sm:text-lg mb-4 font-inria">{mainText}</p>
+                </div>
+                {/* Image for mobile view */}
+                <div className="w-full mb-4 order-2 lg:hidden">
+                  <img
+                    src={F1}
+                    alt="Feature Image"
+                    className="w-full rounded-lg object-cover"
+                    style={{ height: "300px" }}
+                  />
+                </div>
+              </div>
             )}
           </div>
 
-          {/* Image Section */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:pl-6">
+          {/* Image Section - hidden on mobile, shown on desktop */}
+          <div className="hidden lg:flex w-full lg:w-1/2 justify-center lg:pl-6">
             {isLoading ? (
               <Skeleton
                 variant="rectangular"
@@ -76,10 +86,10 @@ const FeatureSection = () => {
           </div>
         </div>
 
-        {/* New Section */}
+        {/* Second Section */}
         <div className="flex flex-col lg:flex-row items-center justify-center w-full">
-          {/* Image Section (Left) */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:pr-6 order-2 lg:order-1">
+          {/* Image Section */}
+          <div className="hidden lg:flex w-full lg:w-1/2 justify-center lg:pr-6 lg:order-1">
             {isLoading ? (
               <Skeleton
                 variant="rectangular"
@@ -96,22 +106,32 @@ const FeatureSection = () => {
               />
             )}
           </div>
-          {/* Text Section (Right) */}
-          <div className="w-full lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left mb-6 lg:mb-0 lg:pl-6 order-1 lg:order-2">
+
+          {/* Text content for second section */}
+          <div className="w-full lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left lg:pl-6 lg:order-2">
             {isLoading ? (
               <>
                 <Skeleton variant="text" width="60%" height={30} />
                 <Skeleton variant="text" width="60%" height={30} />
               </>
             ) : (
-              <>
-                <h2 className="text-4xl sm:text-4xl font-bold mb-4 font-bebas">
+              <div className="flex flex-col">
+                <h2 className="text-4xl sm:text-4xl font-bold mb-4 font-bebas order-1">
                   {newSectionHeading}
                 </h2>
-                <p className="text-lg sm:text-xl font-inria">
+                {/* Image for mobile view */}
+                <div className="w-full mb-4 order-2 lg:hidden">
+                  <img
+                    src={F2}
+                    alt="Approach Image"
+                    className="w-full rounded-lg object-cover"
+                    style={{ height: "300px" }}
+                  />
+                </div>
+                <p className="text-md sm:text-lg mb-4 font-inria order-3">
                   {newSectionText}
                 </p>
-              </>
+              </div>
             )}
           </div>
         </div>

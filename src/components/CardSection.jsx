@@ -91,8 +91,7 @@ const CardSection = () => {
         OUR SERVICES
       </h2>
       <p className="text-center mb-8 font-inria max-w-2xl mx-auto">
-        Stay ahead of the tech curve with a sneak peek into our upcoming series
-        of events. Get ready to savor every thrilling moment!
+        We provide a tailored and needed services that will place your business in the fore front of the vast online audience 
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-inria">
