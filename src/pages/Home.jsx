@@ -53,7 +53,7 @@ const Home = () => {
 
       <NavBar />
 
-      <div className="content-wrapper pt-2">
+      <div className="content-wrapper pt-4">
         <div
           className={`flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-6 md:py-12 bg-cover bg-center ${
             isDarkMode ? "bg-opacity-50" : ""
@@ -78,9 +78,7 @@ const Home = () => {
               Our expertise lies in designing and developing innovative,
               scalable websites that not only meet the needs of businesses
               across Africa but also extend their digital presence far beyond.
-              we build platforms that are tailored to your goals, optimized for
-              growth, and ready to engage audiences globally. We empower
-              businesses to thrive in today’s fast-paced digital landscape
+          
             </p>
 
             <Button
