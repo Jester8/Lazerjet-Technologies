@@ -4,17 +4,16 @@ import Aboutdetails from "../components/Aboutdetails";
 import AboutCard from "../components/AboutCard";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
-
-const About = () => {
+const Web = () => {
   const { isDarkMode } = useTheme();
 
   return (
     <div>
       <Helmet>
-        <title> About | Lazerjet-Technologies</title>
+        <title> Web Services | Lazerjet-Technologies</title>
         <meta
           name="description"
-          content="Welcome to the homepage of Lazerjet-technologies."
+          content="Welcome to the webs service section of Lazerjet-technologies."
         />
         <meta property="og:title" content="Home | My SEO Optimized Website" />
         <meta
@@ -38,7 +37,7 @@ const About = () => {
                 isDarkMode ? "text-gray-100" : "text-white"
               } text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-bebas mb-4 animate-slide-in-slow text-start`}
             >
-              Home / About Us
+              Home / Web Development
             </h1>
           </div>
         </div>
@@ -52,4 +51,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Web;

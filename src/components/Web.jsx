@@ -3,8 +3,9 @@ import { useTheme } from "../components/ThemeContext";
 import FloatingIcons from "./FloatingIcons";
 import F1 from "../assets/img/ai.jpeg";
 import { Skeleton } from "@mui/material";
+import { Web } from "@mui/icons-material";
 
-const AboutCard = () => {
+const WebCard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { isDarkMode } = useTheme();
 
@@ -90,4 +91,4 @@ const AboutCard = () => {
   );
 };
 
-export default AboutCard;
+export default WebCard;
